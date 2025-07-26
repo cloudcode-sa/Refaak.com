@@ -11,11 +11,11 @@
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
-:root {
-  --default-font: "Open Sans",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+/* :root { */
+  /* --default-font: "Open Sans",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Roboto",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
-}
+  --nav-font: "Poppins",  sans-serif; */
+/* } */
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
@@ -57,13 +57,20 @@
   scroll-behavior: smooth;
 }
 
+html[lang="ar"] body {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+html[lang="en"] body {
+  font-family: 'Roboto', system-ui, sans-serif;
+}
+
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
 body {
   color: var(--default-color);
   background-color: var(--background-color);
-  font-family: var(--default-font);
 }
 
 a {
@@ -152,7 +159,42 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
 }
+ 
+.header nav li a img{
+  width: 40px;
+  object-fit: contain;
+}
+.header nav li .btn-tel{
+  background-color: #feb900;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+} 
 
+.whatsapp-button{
+  position: fixed;
+  right: 15px;
+  bottom: 70px;
+  z-index: 999999;  
+  
+}
+.whatsapp-button img{
+  width: 40px;
+  height: 40px;
+}
+.call-us-button{
+  position: fixed;
+  right: 5px;
+  bottom: 125px;
+  z-index: 999999; 
+
+}
+.call-us-button img{
+  width:60px;
+  height: 60px;
+}
 .header .logo img {
   max-height: 32px;
   margin-right: 8px;
@@ -701,7 +743,7 @@ h6 {
 .page-title .breadcrumbs ol li+li::before {
   content: "/";
   display: inline-block;
-  padding-right: 10px;
+  padding:0 10px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
 
@@ -1620,6 +1662,7 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+
 .about .inner-title {
   font-size: 2.75rem;
   font-weight: 700;
@@ -1648,6 +1691,7 @@ section,
   text-transform: uppercase;
   font-size: 1.1rem;
   color: color-mix(in srgb, var(--default-color), transparent 50%);
+ 
 }
 
 .about .our-story h3 {
